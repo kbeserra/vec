@@ -293,9 +293,29 @@ VEC_FUNC void vec##N##_min( vec##N r, const vec##N u, const vec##N v ) {       \
                                                                                \
                                                                                \
 
+VEC_DEF(2)
 
-
-
+VEC_DEF(3)
+// The following is a bit of a one-off.
+// Function vec3_cross
+// ------------------
+// Computes the cross product of u and v
+//   r = u \times v.
+// The resulting vector r will be orthogonal to both u and v and have length 
+// equal to volume of the parallelogram spanned by the vectors u and v. 
+//
+// r: vec3, the cross product of u and v.
+// u: vec3, the left hand vector of the cross product.
+// v: vec3, the right hand vector of the cross product.
+VEC_FUNC void vec3_crossProduct( vec3 r, vec3 u, vec3 v ) {
+  VEC_TYPE i, j, k;
+  i = u[1] * v[2] - u[2] * v[1];
+  j = u[2] * v[0] - u[0] * v[2];
+  k = u[0] * v[1] - u[1] * v[0];
+  r[0] = i;
+  r[1] = j;
+  r[2] = k;
+}
 
 
 
@@ -373,15 +393,15 @@ VEC_FUNC void mat##N##x##N##_copy( mat##N##x##N R, mat##N##x##N M ) {          \
 }                                                                              \
 	                                                                             \
 	                                                                             \
-
-// row
-// column
-// transpose
-// add
-// sub
-// scale
-// mult vec
-// mult
+// TODO:
+//  row
+//  column
+//  transpose
+//  add
+//  sub
+//  scale
+//  mult vec
+//  mult
 //
 
 

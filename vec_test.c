@@ -1,7 +1,5 @@
 #include "vec.h"
 VEC_DEF(1)
-VEC_DEF(2)
-VEC_DEF(3)
 
 #include <stdlib.h>
 #include <check.h>
