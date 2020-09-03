@@ -220,7 +220,7 @@ VEC_FUNC VEC_TYPE vec##N##_norm( const vec##N v) {                             \
 /* v: vecN,                             .                                    */\
 /*                                                                           */\
 /* returns: VEC_TYPE, the Euclidean distance between u and v.                */\
-VEC_FUNC VEC_TYPE vec##N##_metric( const vec##N v) {                           \
+VEC_FUNC VEC_TYPE vec##N##_metric( const vec##N u, const vec##N v) {           \
   vec##N temp;                                                                 \
   vec##N##_sub( temp, u, v );                                                  \
   return vec##N##_norm( temp );                                                \
