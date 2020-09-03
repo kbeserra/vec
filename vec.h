@@ -74,8 +74,8 @@ VEC_FUNC void vec##N##_constant( vec##N r, const VEC_TYPE s ) {                \
 VEC_FUNC void vec##N##_zero( vec##N r, const VEC_TYPE s ) {                    \
   vec##N##_constant( r, 0 );                                                   \
 }                                                                              \
-	                                                                             \
-	                                                                             \
+	                                                                       \
+	                                                                       \
 /* Function: vecN_nan                                                        */\
 /* ------------------                                                        */\
 /* Sets each component of r to nan, not a number.                            */\
@@ -86,8 +86,8 @@ VEC_FUNC void vec##N##_zero( vec##N r, const VEC_TYPE s ) {                    \
 VEC_FUNC void vec##N##_NAN( vec##N r ) {                                       \
   vec##N##_constant( r, VEC_NAN );                                             \
 }                                                                              \
-	                                                                             \
-	                                                                             \
+	                                                                       \
+	                                                                       \
 /* Function: vecN_lin3                                                       */\
 /* ------------------                                                        */\
 /* Computes the linear combination                                           */\
@@ -104,14 +104,14 @@ VEC_FUNC void vec##N##_NAN( vec##N r ) {                                       \
 /* returns: void                                                             */\
 VEC_FUNC void vec##N##_lin3( vec##N r, const VEC_TYPE q, const vec##N u,       \
                                        const VEC_TYPE s, const vec##N v,       \
-																			 const VEC_TYPE t, const vec##N w ) {    \
+			               const VEC_TYPE t, const vec##N w ) {    \
   int i;                                                                       \
   for( i = 0; i < N; i++ ) {                                                   \
     r[i] = q * u[i] + s * v[i] + t * w[i];                                     \
   }                                                                            \
 }                                                                              \
-	                                                                             \
-	                                                                             \
+	                                                                       \
+	                                                                       \
 /* Function: vecN_lin2                                                       */\
 /* ------------------                                                        */\
 /* Computes the linear combination                                           */\
@@ -128,8 +128,8 @@ VEC_FUNC void vec##N##_lin2( vec##N r, const VEC_TYPE s, const vec##N u,       \
                                        const VEC_TYPE t, const vec##N v ) {    \
   vec##N##_lin3(r, s, u, t, v, 0, u );                                         \
 }                                                                              \
-	                                                                             \
-	                                                                             \
+	                                                                       \
+	                                                                       \
 /* Function: vecN_add                                                        */\
 /* ------------------                                                        */\
 /* Computes the sum                                                          */\
@@ -268,7 +268,7 @@ VEC_FUNC void vec##N##_max( vec##N r, const vec##N u, const vec##N v ) {       \
   int i;                                                                       \
   for( i = 0; i < N; i++ ) {                                                   \
     r[i] = u[i] < v[i] ? v[i] : u[i];                                          \
-	}                                                                            \
+	}                                                                      \
 }                                                                              \
                                                                                \
                                                                                \
