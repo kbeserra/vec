@@ -203,11 +203,27 @@ VEC_FUNC VEC_TYPE vec##N##_innerProduct( const vec##N u, const vec##N v ) {    \
 /*       = sqrt( sum_i pi_i(v) * pi_i(v) )                                   */\
 /*       = sqrt( sum_i u_i * v_i ).                                          */\
 /*                                                                           */\
-/* v: vecN, right hand vector in product.                                    */\
+/* v: vecN, vector to compute norm of.                                       */\
 /*                                                                           */\
 /* returns: VEC_TYPE, the Euclidean norm of v.                               */\
 VEC_FUNC VEC_TYPE vec##N##_norm( const vec##N v) {                             \
   return ( (VEC_TYPE)VEC_SQRT( vec##N##_innerProduct(v, v) ) );                \
+}                                                                              \
+                                                                               \
+                                                                               \
+/* Function: vecN_metric                                                     */\
+/* ------------------                                                        */\
+/* Computes the standard Euclidean metric between the vectors u and v.       */\
+/*    d(u,v) = | u - v |                                                     */\
+/*                                                                           */\
+/* u: vecN,                             .                                    */\
+/* v: vecN,                             .                                    */\
+/*                                                                           */\
+/* returns: VEC_TYPE, the Euclidean distance between u and v.                */\
+VEC_FUNC VEC_TYPE vec##N##_metric( const vec##N v) {                           \
+  vec##N temp;                                                                 \
+  vec##N##_sub( temp, u, v );                                                  \
+  return vec##N##_norm( temp );                                                \
 }                                                                              \
                                                                                \
                                                                                \
