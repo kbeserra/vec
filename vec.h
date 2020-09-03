@@ -46,8 +46,8 @@ VEC_FUNC VEC_TYPE vec##N##_pi( const int i, const vec##N v ) {                 \
   }                                                                            \
   return (v[i]);                                                               \
 }                                                                              \
-	                                                                             \
-	                                                                             \
+	                                                                       \
+	                                                                       \
 /* Function: vecN_constant                                                   */\
 /* ------------------                                                        */\
 /* Sets each component of r to s.                                            */\
@@ -62,8 +62,8 @@ VEC_FUNC void vec##N##_constant( vec##N r, const VEC_TYPE s ) {                \
     r[i] = s;                                                                  \
   }                                                                            \
 }                                                                              \
-	                                                                             \
-	                                                                             \
+	                                                                       \
+	                                                                       \
 /* Function: vecN_zero                                                       */\
 /* ------------------                                                        */\
 /* Sets each component of r to zero.                                         */\
