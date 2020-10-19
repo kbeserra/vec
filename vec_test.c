@@ -154,7 +154,7 @@ END_TEST
 
 
 
-Suite * vec_suite(void){
+Suite * vec_test_suite(void){
 	Suite *s;
 	TCase *tc_core;
 
@@ -174,6 +174,7 @@ Suite * vec_suite(void){
 	suite_add_tcase(s, tc_core);
 
 	return s;
+
 }
 
 
@@ -181,16 +182,24 @@ Suite * vec_suite(void){
 MAT_DEF(3)
 
 
-int main( int argn, char** argv ) {
+int vec_run_tests( ) {
 	int number_failed;
 	Suite *s;
 	SRunner *sr;
-	s = vec_suite();
+	s = vec_test_suite();
 	sr = srunner_create(s);
 	srunner_run_all(sr, CK_NORMAL);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);
 
-	return (number_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
+	return number_failed == 0;
 
 }
+
+#ifdef VEC_TEST
+
+	int main( int argn, char** argv  ){
+		return vec_run_tests() ? EXIT_SUCCESS : EXIT_FAILURE;
+	}
+
+#endif
