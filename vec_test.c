@@ -1,10 +1,12 @@
+#ifdef VEC_TEST
+
+#include <stdlib.h>
+
 #include "vec.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
 VEC_DEF(1)
-
-#include <stdlib.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
@@ -201,7 +203,6 @@ int vec_run_tests( ) {
 
 }
 
-#ifdef VEC_TEST
 
 	int main( int argn, char** argv  ){
 		return vec_run_tests() ? EXIT_SUCCESS : EXIT_FAILURE;
