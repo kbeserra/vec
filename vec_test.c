@@ -2,9 +2,11 @@
 VEC_DEF(1)
 
 #include <stdlib.h>
-#include <check.h>
 
-#include <stdio.h>
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
+#include <check.h>
+#pragma clang diagnostic pop
 
 START_TEST(projection_inbounds)
 {

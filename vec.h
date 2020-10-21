@@ -382,7 +382,7 @@ VEC_FUNC void mat##N##x##N##_zero( mat##N##x##N R ) {                          \
 /*                                                                           */\
 /* returns: void                                                             */\
 VEC_FUNC void mat##N##x##N##_nan( mat##N##x##N R ) {                           \
-   int i, j;                                                                   \
+   int i;                                                                   \
    for( i = 0; i < N; i++ ) {                                                  \
      vec##N##_nan( R[i] );                                                     \
    }                                                                           \
@@ -442,7 +442,6 @@ VEC_FUNC void mat##N##x##N##_row( vec##N r,                                    \
 /* returns: void                                                             */\
 VEC_FUNC void mat##N##x##N##_column( vec##N r,                                 \
                                      const mat##N##x##N M, const int i ) {     \
- int j;                                                                        \
  if( i < 0 || N <= i ){                                                        \
    vec##N##_nan( r );                                                          \
    return ;                                                                    \
