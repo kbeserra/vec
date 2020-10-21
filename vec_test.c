@@ -3,7 +3,6 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
 VEC_DEF(1)
-#pragma clang diagnostic pop
 
 #include <stdlib.h>
 
@@ -209,3 +208,5 @@ int vec_run_tests( ) {
 	}
 
 #endif
+
+#pragma clang diagnostic pop
