@@ -211,6 +211,7 @@ int vec_run_tests( ) {
 		return vec_run_tests() ? EXIT_SUCCESS : EXIT_FAILURE;
 	}
 
-#endif
 
 #pragma clang diagnostic pop
+
+#endif
