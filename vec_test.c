@@ -1,6 +1,5 @@
-#ifdef VEC_TEST
-
 #include <stdlib.h>
+#ifdef VEC_TEST
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
