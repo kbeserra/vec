@@ -333,6 +333,7 @@ VEC_FUNC void vec3_crossProduct( vec3 r, vec3 u, vec3 v ) {
   r[2] = k;
 }
 
+VEC_DEF(4)
 
 
 #define MAT_DEF(N)                                                             \
@@ -595,7 +596,9 @@ VEC_FUNC void mat##N##x##N##_mult( mat##N##x##N R,                             \
                                                                                \
                                                                                \
 
-
+MAT_DEF(2) 
+MAT_DEF(3) 
+MAT_DEF(4) 
 
 
 
