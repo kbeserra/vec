@@ -2,16 +2,17 @@
 
 #include <stdlib.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
+#include <check.h>
+#pragma clang diagnostic pop
+
 #include "vec.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
 VEC_DEF(1)
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
-#include <check.h>
-#pragma clang diagnostic pop
 
 START_TEST(projection_inbounds)
 {
@@ -186,7 +187,9 @@ Suite * vec_test_suite(void){
 
 
 
-MAT_DEF(3)
+
+
+
 
 
 int vec_run_tests( ) {
